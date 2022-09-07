@@ -4,4 +4,3 @@ from songs.models import *
 
 admin.site.register(Songs)
 admin.site.register(Instruments)
-admin.site.register(Movies)
