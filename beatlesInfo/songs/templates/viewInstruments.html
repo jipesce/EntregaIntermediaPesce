@@ -9,26 +9,39 @@
     padding: 10px;
     border-spacing: 30px;
   }
-  </style>
+
+  .my-buttons {
+    display: flex;
+    justify-content: center;
+    button {
+        cursor: pointer;
+    }
+}
+
+</style>
   
 <h1>Listado de instrumentos utilizados por The Beatles!!!</h1>
   
-<form action="" method="POST">
+<p>
+Buscar por marca/brand:
+</p>
+
+
+<form action="">
   {% csrf_token %}
   <input type="text" name="pattern" id="pattern">
-  <input type="submit" value="Buscar por tipo">
+  <input type="submit" value="Buscar!" formmethod="POST">
+  <input type="submit" value="Limpiar" formmethod="GET">
 </form>
+
 <p></p>
-<form action="" method="GET">
-  {% csrf_token %}
-  <input type="submit" value="Limpiar Busqueda">
-</form>
 
 <p>
   {% if busqueda == True %}
   <p>{{ mensaje }}</p>
   {% endif %}
 </p>
+
 
 <table>
   <tr>

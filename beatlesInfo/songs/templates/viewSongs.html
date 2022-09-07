@@ -13,16 +13,18 @@
   
 <h1>Listado de canciones de The Beatles!!!</h1>
   
-<form action="" method="POST">
+<p>
+  Buscar por nombre/name:
+</p>
+
+<form action="">
   {% csrf_token %}
   <input type="text" name="pattern" id="pattern">
-  <input type="submit" value="Buscar por nombre">
+  <input type="submit" value="Buscar!" formmethod="POST">
+  <input type="submit" value="Limpiar" formmethod="GET">
 </form>
+
 <p></p>
-<form action="" method="GET">
-  {% csrf_token %}
-  <input type="submit" value="Limpiar Busqueda">
-</form>
 
 <p>
   {% if busqueda == True %}
