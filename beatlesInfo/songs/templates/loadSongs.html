@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block loadSongs %}
+
+<h1>Desde aca podras cargar nuevas canciones a la base de datos!!!</h1>
+
+{% if cancionCargada == False %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <table>
+    {{ newSongForm.as_table }}
+  </table>
+  <input type="submit" value="Enviar">
+</form>
+{% endif %}
+
+
+{% if cancionCargada == True %}
+<p>CANCION CARGADA CON EXITO!!!</p>
+<form action="" method="GET">
+  <input type="submit" value="Volver">
+</form>
+{% endif %}
+
+{% endblock %}

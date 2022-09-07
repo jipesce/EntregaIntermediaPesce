@@ -1,0 +1,50 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block viewSongs %}
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    border-spacing: 30px;
+  }
+  </style>
+  
+<h1>Listado de canciones de The Beatles!!!</h1>
+  
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="text" name="pattern" id="pattern">
+  <input type="submit" value="Buscar por nombre">
+</form>
+<p></p>
+<form action="" method="GET">
+  {% csrf_token %}
+  <input type="submit" value="Limpiar Busqueda">
+</form>
+
+<p>
+  {% if busqueda == True %}
+  <p>{{ mensaje }}</p>
+  {% endif %}
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Composer</th>
+    <th>Album</th>
+    <th>Year</th>
+  </tr>
+  {% for item in searchResults %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.composer }}</td>
+    <td>{{ item.album }}</td>
+    <td>{{ item.year }}</td>
+  </tr>
+  {% endfor %}
+</table>
+  
+{% endblock %}

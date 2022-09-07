@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block loadInstruments %}
+
+<h1>Desde aca podras cargar nuevos instrumentos a la base de datos!!!</h1>
+
+{% if instrumentoCargado == False %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <table>
+    {{ newInstrumentForm.as_table }}
+  </table>
+  <input type="submit" value="Enviar">
+</form>
+{% endif %}
+
+
+{% if instrumentoCargado == True %}
+<p>INSTRUMENTO CARGADO CON EXITO!!!</p>
+<form action="" method="GET">
+  <input type="submit" value="Volver">
+</form>
+{% endif %}
+
+{% endblock %}

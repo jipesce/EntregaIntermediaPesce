@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block searchSongs %}
+  <h1>Estamos buscando "{{ search }}"</h1>
+
+  <table>
+    {{ songsForm.as_table }}
+  </table>
+<!-- 
+  {% if miFormulario %}
+
+  <ul>
+  {% for song in miFormulario %}
+    <li> {{ song }} </li>
+  {% endfor %}
+
+  </ul>
+
+  {% endif %} -->
+
+{% endblock %}

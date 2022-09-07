@@ -1,0 +1,29 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block viewMovies %}
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    border-spacing: 30px;
+  }
+  </style>
+  
+<h1>Listado de peliculas protagonizadas por The Beatles!!!</h1>
+  
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year</th>
+  </tr>
+  {% for item in movies %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.year }}</td>
+  </tr>
+  {% endfor %}
+</table>
+  
+{% endblock %}

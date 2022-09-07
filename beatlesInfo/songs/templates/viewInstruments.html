@@ -1,0 +1,50 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block viewInstruments %}
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    border-spacing: 30px;
+  }
+  </style>
+  
+<h1>Listado de instrumentos utilizados por The Beatles!!!</h1>
+  
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="text" name="pattern" id="pattern">
+  <input type="submit" value="Buscar por tipo">
+</form>
+<p></p>
+<form action="" method="GET">
+  {% csrf_token %}
+  <input type="submit" value="Limpiar Busqueda">
+</form>
+
+<p>
+  {% if busqueda == True %}
+  <p>{{ mensaje }}</p>
+  {% endif %}
+</p>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Brand</th>
+    <th>Model</th>
+    <th>Year</th>
+  </tr>
+  {% for item in searchResults %}
+  <tr>
+    <td>{{ item.type }}</td>
+    <td>{{ item.brand }}</td>
+    <td>{{ item.model }}</td>
+    <td>{{ item.year }}</td>
+  </tr>
+  {% endfor %}
+</table>
+  
+{% endblock %}
