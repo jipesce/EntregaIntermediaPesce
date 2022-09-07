@@ -78,8 +78,8 @@ def loadInstruments(request):
       newInstrument = Instruments(
         type = newInstrumentDict['type'],
         brand = newInstrumentDict['brand'],
-        model = newInstrumentDict['model'],
-        year = newInstrumentDict['year'])
+        model = newInstrumentDict['model']
+      )
 
       newInstrument.save()
       instrumentoCargado = True

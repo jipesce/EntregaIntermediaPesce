@@ -12,7 +12,6 @@ class Instruments(models.Model):
   type = models.CharField(max_length=40)
   brand = models.CharField(max_length=40)
   model = models.CharField(max_length=40)
-  year = models.IntegerField()
 
 class Movies(models.Model):
   name = models.CharField(max_length=40)

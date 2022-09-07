@@ -35,14 +35,12 @@
     <th>Type</th>
     <th>Brand</th>
     <th>Model</th>
-    <th>Year</th>
   </tr>
   {% for item in searchResults %}
   <tr>
     <td>{{ item.type }}</td>
     <td>{{ item.brand }}</td>
     <td>{{ item.model }}</td>
-    <td>{{ item.year }}</td>
   </tr>
   {% endfor %}
 </table>

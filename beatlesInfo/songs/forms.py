@@ -10,5 +10,3 @@ class InstrumentsForm(forms.Form):
   type = forms.CharField(max_length=40)
   brand = forms.CharField(max_length=40)
   model = forms.CharField(max_length=40)
-  year = forms.IntegerField()
-
